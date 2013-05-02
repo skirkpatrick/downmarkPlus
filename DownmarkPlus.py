@@ -15,12 +15,16 @@ conversion.  The plaintext result will appear in the lower textbox.
 Click the 'Copy all' button to copy the result to the clipboard.
 
 Runtime issues can be reported via the 'Report an issue' button, which
-will send an email to the maintainers.  Reports will include:
+will send an email to the maintainers*.  Reports will include:
     - Submitter's name
     - Submission date
     - Description of the issue
     - Provided input
     - Generated output
+    
+* - Email addresses/passwords are not included in the source distribution, 
+    for obvious reasons.  If you wish to use the email functionality yourself, 
+    fill in the blanks!
    
 """
 
