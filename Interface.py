@@ -77,12 +77,17 @@ class parse(HTMLParser):
                 if attr[0] == 'src':
                     if includeArt.get() == True:
                         global result
-                        result += c.genArt(attr[1], float(threshold.get())) + "\n"
+                        result += c.genArt(attr[1], float(threshold.get()), int(width.get())) + "\n"
             currAlt = alt
+
+        if tag == "li":
+            global result
+            result += "    -"
 
         if tag == "br":
             global result
             result += "\n"
+
         
     def handle_endtag(self, tag):	
         #print "End tag:", tag
@@ -103,6 +108,10 @@ class parse(HTMLParser):
                 currURL = ""
                 
         if tag == "td":
+            global result
+            result += '\n'
+
+        if tag == "p" or tag == "section" or tag == "aside" or tag == "li":
             global result
             result += '\n'
             
@@ -220,6 +229,11 @@ threshHoldLabel = Label(root, text="Enter image threshold")
 threshHoldLabel.pack()
 threshold = Entry(root, width=4)
 threshold.pack()
+
+widthLabel = Label(root, text="Enter image width")
+widthLabel.pack()
+width = Entry(root, width=4)
+width.pack()
 
 incArt = Checkbutton(root, text=" Include Art", variable = includeArt, onvalue=True, offvalue=False)
 incArt.pack()

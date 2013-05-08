@@ -24,15 +24,15 @@ class Converter:
     #which can be found here:
     #https://gist.github.com/aeter/359182
 
-    def genArt(self, url, threshold):
+    def genArt(self, url, threshold, wArg):
         imgSource = urllib2.urlopen(url).read()
         img = Image.open(StringIO(imgSource))	
              
         #Store original height/width of image
         width, height = img.size
         print "Width: " + str(width) + " Height " + str(height)
-        #Calculate new height based on new width (arbitrary)
-        w = 100
+        #Calculate new height based on new width (passed in via wArg)
+        w = wArg
         h = int((height * w) / width)
 
         #Resize image and convert to grayscale, accordingly

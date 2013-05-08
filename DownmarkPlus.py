@@ -29,7 +29,7 @@ will send an email to the maintainers*.  Reports will include:
 """
 
 __author__ = "Christopher Escue"
-__version__ = "1.0.1"
+__version__ = "1.2.1"
 __maintainer__ = "Christopher Escue"
 __email__ = "cescue@mail.csuchico.edu"
 __status__ = "Production"
