@@ -53,7 +53,7 @@ class parse(HTMLParser):
     def handle_starttag(self, tag, attrs):
         c = Converter()
 
-        if tag == "head":
+        if tag == "head" or tag == "style":
             global suppress
             suppress = True
 
@@ -92,7 +92,7 @@ class parse(HTMLParser):
     def handle_endtag(self, tag):	
         #print "End tag:", tag
         
-        if tag == "head":
+        if tag == "head" or tag == "style":
             global suppress
             suppress = False
             
