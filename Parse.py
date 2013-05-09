@@ -1,3 +1,7 @@
+#This class was a work-in-progress at the deadline.  It is by 
+#no means compelte, but I hope it will be at some point.  This
+#file is not currently used by the application.
+
 #HTML parsing library
 from HTMLParser import HTMLParser
 
