@@ -1,5 +1,6 @@
 import smtplib
 import datetime
+import os
 from email.mime.text import MIMEText
 from Tkinter import *
 from HTMLParser import HTMLParser
@@ -34,7 +35,11 @@ suppress = False
 #Root widget for interface
 root = Tk()
 root.wm_title("Downmark Plus")
-root.iconbitmap(default='favicon.ico')
+if os.name == 'nt':
+    root.iconbitmap(default='favicon.ico')
+else:
+    #Linux / Mac icon should be set here
+    pass
 prompt = Label(root, text="Enter HTML content below.")
 
 #Textbox for HTML input
