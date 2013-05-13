@@ -38,8 +38,7 @@ root.wm_title("Downmark Plus")
 if os.name == 'nt':
     root.iconbitmap(default='favicon.ico')
 else:
-    #Linux / Mac icon should be set here
-    pass
+    root.tk.call('wm', 'iconphoto', root._w, PhotoImage(file='favicon.gif'))
 prompt = Label(root, text="Enter HTML content below.")
 
 #Textbox for HTML input
